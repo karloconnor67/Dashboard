@@ -1,0 +1,39 @@
+{
+	"key": "my-add-on",
+	"name": "Dashboard Item",
+	"description": "Dashboard Item",
+	"vendor": {
+		"name": "Karl OConnor",
+		"url": "https://www.atlassian.com/karloconnor"
+	},
+	"baseUrl": "{{localBaseUrl}}",
+	"links": {
+		"self": "{{localBaseUrl}}/atlassian-connect.json",
+		"homepage": "{{localBaseUrl}}/atlassian-connect.json"
+	},
+	"authentication": {
+		"type": "jwt"
+	},
+	"lifecycle": {
+		"installed": "/installed"
+	},
+	"scopes": [
+		"READ"
+	],
+	"modules": {
+		"jiraDashboardItems": [
+			{
+				"description": {
+					"value": "Dashboard item description"
+				},
+				"url": "/dashboard-item-test?dashboardItemId={dashboardItem.id}&dashboardId={dashboard.id}&view={dashboardItem.viewType}",
+				"configurable": false,
+				"thumbnailUrl": "atlassian-icon-16.png",
+				"name": {
+					"value": "Dashboard item title"
+				},
+				"key": "dashboard-item-key"
+			}
+		]
+	}
+}
